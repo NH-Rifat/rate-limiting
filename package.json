@@ -1,0 +1,16 @@
+{
+  "name": "rate-limiting-fixed-window",
+  "version": "1.0.0",
+  "description": "Rate limiting implementation using fixed window algorithm",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "keywords": ["rate-limiting", "express", "fixed-window"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
