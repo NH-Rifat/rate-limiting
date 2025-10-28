@@ -7,8 +7,8 @@
  * NOTE: This is a demonstration script, not for testing the actual servers.
  */
 
-const FixedWindowRateLimiter = require('./rateLimiter');
-const TokenBucketRateLimiter = require('./tokenBucketRateLimiter');
+const FixedWindowRateLimiter = require('../algorithms/fixedWindowRateLimiter');
+const TokenBucketRateLimiter = require('../algorithms/tokenBucketRateLimiter');
 
 // Create instances
 const fixedWindow = new FixedWindowRateLimiter({

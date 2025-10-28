@@ -1,5 +1,5 @@
 const express = require('express');
-const FixedWindowRateLimiter = require('./rateLimiter');
+const FixedWindowRateLimiter = require('../algorithms/fixedWindowRateLimiter');
 
 const app = express();
 const PORT = 3000;
@@ -7,7 +7,7 @@ const PORT = 3000;
 // Create rate limiter instance
 // Configuration: 3 requests per 1 second
 const rateLimiter = new FixedWindowRateLimiter({
-  maxRequests: 1,      // Maximum 3 requests
+  maxRequests: 3,      // Maximum 3 requests
   windowSize: 1000     // Per 1 second (1000 milliseconds)
 });
 
@@ -21,6 +21,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to Rate Limiting Demo!',
+    algorithm: 'Fixed Window',
     timestamp: new Date().toISOString(),
     ip: req.ip
   });
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 app.get('/api/data', (req, res) => {
   res.json({
     message: 'Data fetched successfully',
+    algorithm: 'Fixed Window',
     timestamp: new Date().toISOString(),
     data: {
       id: Math.floor(Math.random() * 1000),
@@ -42,6 +44,7 @@ app.get('/api/data', (req, res) => {
 app.post('/api/submit', (req, res) => {
   res.json({
     message: 'Data submitted successfully',
+    algorithm: 'Fixed Window',
     timestamp: new Date().toISOString(),
     received: req.body
   });
@@ -66,6 +69,6 @@ app.listen(PORT, () => {
   console.log(`   - http://localhost:${PORT}/`);
   console.log(`   - http://localhost:${PORT}/api/data`);
   console.log(`   - http://localhost:${PORT}/api/submit`);
-  console.log(`\n💡 Run 'npm run test' in another terminal to test rate limiting`);
+  console.log(`\n💡 Run 'npm test' in another terminal to test rate limiting`);
   console.log(`========================================\n`);
 });

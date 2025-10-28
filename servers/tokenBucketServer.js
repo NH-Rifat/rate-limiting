@@ -1,5 +1,5 @@
 const express = require('express');
-const TokenBucketRateLimiter = require('./tokenBucketRateLimiter');
+const TokenBucketRateLimiter = require('../algorithms/tokenBucketRateLimiter');
 
 const app = express();
 const PORT = 3001; // Using different port from fixed window server
@@ -94,6 +94,6 @@ app.listen(PORT, () => {
   console.log(`   - Tokens refill continuously over time`);
   console.log(`   - More flexible than fixed window`);
   console.log(`   - Can save tokens for future use`);
-  console.log(`\n💡 Run test script: node testTokenBucket.js`);
+  console.log(`\n💡 Run test: npm run test:token`);
   console.log(`========================================\n`);
 });

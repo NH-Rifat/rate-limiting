@@ -2,13 +2,15 @@
   "name": "rate-limiting-algorithms",
   "version": "1.0.0",
   "description": "Rate limiting implementations: Fixed Window and Token Bucket algorithms",
-  "main": "server.js",
+  "main": "servers/fixedWindowServer.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "node test.js",
-    "start:token": "node serverTokenBucket.js",
-    "test:token": "node testTokenBucket.js",
-    "demo": "node demo.js"
+    "start": "node servers/fixedWindowServer.js",
+    "start:fixed": "node servers/fixedWindowServer.js",
+    "start:token": "node servers/tokenBucketServer.js",
+    "test": "node tests/fixedWindowTest.js",
+    "test:fixed": "node tests/fixedWindowTest.js",
+    "test:token": "node tests/tokenBucketTest.js",
+    "demo": "node demos/comparisonDemo.js"
   },
   "keywords": ["rate-limiting", "express", "fixed-window", "token-bucket"],
   "author": "",
