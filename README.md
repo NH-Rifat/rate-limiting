@@ -1,4 +1,4 @@
-# Rate Limiting Algorithms Implementation
+# Rate Limiting Algorithms Implementation Guide
 
 A comprehensive Node.js implementation of rate limiting using **Fixed Window** and **Token Bucket** algorithms with Express.js.
 
