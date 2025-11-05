@@ -12,7 +12,7 @@ Welcome to the Rate Limiting Algorithms documentation! 📚
   - Quick reference
 
 ### ⚡ Quick Reference
-- **[QUICKSTART.md](QUICKSTART.md)** - Quick start guide
+- **[QUICKSTART.md](QUICKSTART.md)** - Quick start guide here
   - Fast setup
   - Command reference
   - Configuration tips
